@@ -11,10 +11,10 @@ module.exports = {
     })
   },
 
-  read: (req, res) => {
-    const db = req.app.get('db')
+  read: (req, res, next) => {
+    const dbInstance = req.app.get('db')
 
-    db.read_products()
+    dbInstance.read_products()
     .then(products => res.status(200).send(products))
     .catch(err => {
       res.status(500).send('Read products did not work')
