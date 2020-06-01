@@ -12,8 +12,8 @@ function Product (props) {
           <p>{`$${product.price}`}</p>
         </div>
         <div className='product-buttons'>
-          <div className='delete-button'>Delete</div>
-          <div className='edit-button'>Edit</div>
+          <div onClick={() => props.deleteProduct(product.id)} className='delete-button'>Delete</div>
+          <div onClick={() => props.editMode(product.id)} className='edit-button'>Edit</div>
         </div>
       </div>
     </div>
